@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sudoku Game</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+        }
+
+        input {
+            width: 38px;
+            height: 38px;
+            text-align: center;
+            font-size: 18px;
+            border: none;
+        }
+
+        .fixed {
+            background-color: #d3d3d3;
+            font-weight: bold;
+        }
+
+        /* 3x3 BOX BORDERS */
+        td:nth-child(3n) {
+            border-right: 3px solid black;
+        }
+
+        tr:nth-child(3n) td {
+            border-bottom: 3px solid black;
+        }
+
+        table tr:first-child td {
+            border-top: 3px solid black;
+        }
+
+        table td:first-child {
+            border-left: 3px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>Sudoku Solver</h1>
+<form method="POST" action="/solve">
+    <table>
+        {% for i in range(9) %}
+        <tr>
+            {% for j in range(9) %}
+            <td>
+                <input type="text"
+                       name="cell{{i}}{{j}}"
+                       maxlength="1">
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <button type="submit">Solve</button>
+</form>
+</body>
+</html>

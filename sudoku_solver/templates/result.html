@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solution</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .solved {
+            background-color: lightgreen;
+        }
+
+        /* 3x3 BOX DESIGN */
+        td:nth-child(3n) {
+            border-right: 3px solid black;
+        }
+
+        tr:nth-child(3n) td {
+            border-bottom: 3px solid black;
+        }
+
+        table tr:first-child td {
+            border-top: 3px solid black;
+        }
+
+        table td:first-child {
+            border-left: 3px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>Sudoku Solution</h1>
+
+<table>
+    {% for i in range(9) %}
+    <tr>
+        {% for j in range(9) %}
+        <td class="{% if original[i][j] == 0 %}solved{% endif %}">
+            {{ grid[i][j] }}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>🎉 Solved! 🎉</h2>
+
+<a href="/game">Another puzzle</a>
+
+</body>
+</html>
