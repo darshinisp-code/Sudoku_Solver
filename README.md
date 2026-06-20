@@ -9,6 +9,7 @@ A Python-based Sudoku Solver that uses the Backtracking Algorithm to solve Sudok
 
 ## Technologies Used
 - Python
+- HTML
 
 ## How to Run
 1. Download the project files.
